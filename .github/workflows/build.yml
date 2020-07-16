@@ -2,11 +2,15 @@ name: build
 
 on: [push, pull_request]
 
+env:
+  BUILD_TYPE: Debug
+
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ${{ matrix.os }}
     strategy:
       matrix:
+        os: [ubuntu-latest, macOS-latest] #, windows-latest]
         python-version: ["3.7", "3.8"]
 
     steps:
@@ -30,6 +34,24 @@ jobs:
         poetry config virtualenvs.in-project true
         poetry install
 
+    - name: Create Build Directory
+      run: cmake -E make_directory ${{runner.workspace}}/build
+
+    - name: Configure CMake
+      shell: bash
+      working-directory: ${{runner.workspace}}/build
+      run: cmake $GITHUB_WORKSPACE -DCMAKE_BUILD_TYPE=$BUILD_TYPE
+
+    - name: Build
+      shell: bash
+      working-directory: ${{runner.workspace}}/build
+      run: cmake --build . --config $BUILD_TYPE
+
+    - name: Run cpp Test
+      shell: bash
+      working-directory: ${{runner.workspace}}/build
+      run: ctest --verbose --build-config $BUILD_TYPE
+
     - name: Run safety checks
       run: |
         source "$HOME/.poetry/env"
@@ -40,7 +62,35 @@ jobs:
         source "$HOME/.poetry/env"
         STRICT=1 make check-style
 
-    - name: Run tests
+    - name: Create Build Directory
+      run: cmake -E make_directory ${{runner.workspace}}/build
+
+    - name: Configure CMake
+      shell: bash
+      working-directory: ${{runner.workspace}}/build
+      run: cmake -DCMAKE_CXX_CPPLINT=cpplint $GITHUB_WORKSPACE
+
+    - name: Check style with cpplint
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: ./scripts/check_style_cpplint.sh ${{runner.workspace}}/build 1
+
+      #      - name: Run cppcheck
+      #        shell: bash
+      #        working-directory: ${{github.workspace}}
+      #        run: ./scripts/run_cppcheck.sh ${{runner.workspace}}/build
+
+    - name: Install clang-tidy
+      run: |
+        sudo apt-get install clang-tidy-9
+
+    - name: Run clang-tidy
+      shell: bash
+      working-directory: ${{github.workspace}}
+      run: |
+        clang-tidy-9 --quiet -p ${{runner.workspace}}/build k2/csrc/*.cc k2/python/csrc/*.cc
+
+    - name: Run python tests
       run: |
         source "$HOME/.poetry/env"
         make test

@@ -1,0 +1,19 @@
+{
+    "template": "https://github.com/TezRomacH/python-package-template",
+    "commit": "25f4d69faf2f51c6c133e022e10406c8d75d059f",
+    "context": {
+        "cookiecutter": {
+            "project_name": "sequeender",
+            "project_description": "one day, SEQuence problems got the qUEen's END ordER, the codename is SEQUEENDER.",
+            "organization": "sequeender",
+            "license": "MIT",
+            "version": "0.1.0",
+            "github_name": "songmeixu",
+            "email": "songmeixu@outlook.com",
+            "_copy_without_render": [
+                "poetry.lock"
+            ],
+            "_template": "https://github.com/TezRomacH/python-package-template"
+        }
+    }
+}

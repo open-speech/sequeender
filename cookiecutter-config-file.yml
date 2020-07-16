@@ -1,0 +1,10 @@
+# This file contains values from Cookiecutter
+
+default_context:
+  project_name: "sequeender"
+  project_description: "one day, SEQuence problems got the qUEen's END ordER, the codename is SEQUEENDER."
+  organization: "sequeender"
+  license: "MIT"
+  version: "0.1.0"
+  github_name: "songmeixu"
+  email: "songmeixu@outlook.com"

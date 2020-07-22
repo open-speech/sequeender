@@ -1,11 +1,11 @@
-// k2/cc/connect.cc
+// sequeender/cc/connect.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/connect.h"
+#include "sequeender/cc/connect.h"
 
 #include <algorithm>
 #include <limits>
@@ -14,12 +14,12 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 
 // This function uses "Tarjan's strongly connected components algorithm"
 // (see
@@ -265,4 +265,4 @@ bool Connection::GetOutput(Fsa *fsa_out, int32_t *arc_map /*= nullptr*/) {
   return is_acyclic_;
 }
 
-}  // namespace k2
+}  // namespace sequeender

@@ -1,20 +1,20 @@
-// k2/cc/aux_labels_test.cc
+// sequeender/cc/aux_labels_test.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/aux_labels.h"
+#include "sequeender/cc/aux_labels.h"
 
 #include <utility>
 #include <vector>
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 
 class AuxLablesTest : public ::testing::Test {
  protected:
@@ -251,4 +251,4 @@ TEST(AuxLabels, InvertFst) {
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender

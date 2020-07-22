@@ -1,12 +1,12 @@
-// k2/cc/determinize_impl.h
+// sequeender/cc/determinize_impl.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_DETERMINIZE_IMPL_H_
-#define K2_cc_DETERMINIZE_IMPL_H_
+#ifndef sequeender_cc_DETERMINIZE_IMPL_H_
+#define sequeender_cc_DETERMINIZE_IMPL_H_
 
 #include <algorithm>
 #include <cassert>
@@ -19,11 +19,11 @@
 #include <utility>
 #include <vector>
 
-#include "k2/cc/fsa.h"
-#include "k2/cc/util.h"
-#include "k2/cc/weights.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/util.h"
+#include "sequeender/cc/weights.h"
 
-namespace k2 {
+namespace sequeender {
 /*
   HOW THIS WORKS
 
@@ -792,6 +792,6 @@ class DetStateMap {
   };
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_DETERMINIZE_IMPL_H_
+#endif  // sequeender_cc_DETERMINIZE_IMPL_H_

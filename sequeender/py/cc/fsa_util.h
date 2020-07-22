@@ -1,14 +1,14 @@
-// k2/py/cc/fsa_util.h
+// sequeender/py/cc/fsa_util.h
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 
 // See ../../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_py_cc_FSA_UTIL_H_
-#define K2_py_cc_FSA_UTIL_H_
+#ifndef sequeender_py_cc_FSA_UTIL_H_
+#define sequeender_py_cc_FSA_UTIL_H_
 
-#include "k2/py/cc/k2.h"
+#include "sequeender/py/cc/sequeender.h"
 
 void PybindFsaUtil(py::module &m);
 
-#endif  // K2_py_cc_FSA_UTIL_H_
+#endif  // sequeender_py_cc_FSA_UTIL_H_

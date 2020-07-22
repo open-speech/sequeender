@@ -1,12 +1,12 @@
-// k2/cc/fsa_util.h
+// sequeender/cc/fsa_util.h
 
 // Copyright (c)  2020  Daniel Povey
 //                      Haowen Qiu
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_FSA_UTIL_H_
-#define K2_cc_FSA_UTIL_H_
+#ifndef sequeender_cc_FSA_UTIL_H_
+#define sequeender_cc_FSA_UTIL_H_
 
 #include <limits>
 #include <memory>
@@ -14,10 +14,10 @@
 #include <utility>
 #include <vector>
 
-#include "k2/cc/array.h"
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/array.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 
 namespace dfs {
 
@@ -236,7 +236,7 @@ void CreateFsa(const std::vector<Arc> &arcs, Fsa *fsa,
   ... ...
   final_state
 
-  K2 requires that the final state has the largest state number. The above
+  sequeender requires that the final state has the largest state number. The above
   format requires the last line to be the final state, whose sole purpose is
   to be compatible with OpenFST.
  */
@@ -332,6 +332,6 @@ void ReorderCopyN(InputIterator index, Size count, RandomAccessIterator src,
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_FSA_UTIL_H_
+#endif  // sequeender_cc_FSA_UTIL_H_

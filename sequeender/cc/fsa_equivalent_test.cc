@@ -1,10 +1,10 @@
-// k2/cc/fsa_equivalent_test.cc
+// sequeender/cc/fsa_equivalent_test.cc
 
 // Copyright (c)  2020  Haowen Qiu
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/fsa_equivalent.h"
+#include "sequeender/cc/fsa_equivalent.h"
 
 #include <algorithm>
 #include <utility>
@@ -12,9 +12,9 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 
 TEST(FsaEquivalent, IsNotRandEquivalent) {
   {
@@ -347,4 +347,4 @@ TEST(FsaEquivalent, RandomPathWithoutEpsilonArc) {
     EXPECT_TRUE(arc_map.empty());
   }
 }
-}  // namespace k2
+}  // namespace sequeender

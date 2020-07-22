@@ -1,11 +1,11 @@
-// k2/cc/fsa_renderer.cc
+// sequeender/cc/fsa_renderer.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/fsa_renderer.h"
+#include "sequeender/cc/fsa_renderer.h"
 
 #include <iomanip>
 #include <sstream>
@@ -30,8 +30,8 @@ digraph FSA {
 
 std::string GenerateEpilogue() { return "}"; }
 
-using k2::Arc;
-using k2::Fsa;
+using sequeender::Arc;
+using sequeender::Fsa;
 
 std::string ProcessState(const Fsa &fsa, int32_t state,
                          const float *arc_weights = nullptr) {
@@ -62,7 +62,7 @@ std::string ProcessState(const Fsa &fsa, int32_t state,
 
 }  // namespace
 
-namespace k2 {
+namespace sequeender {
 
 std::string FsaRenderer::Render() const {
   int32_t num_states = fsa_.NumStates();
@@ -86,4 +86,4 @@ std::string FsaRenderer::Render() const {
   return os.str();
 }
 
-}  // namespace k2
+}  // namespace sequeender

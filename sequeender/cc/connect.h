@@ -1,4 +1,4 @@
-// k2/cc/connect.h
+// sequeender/cc/connect.h
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (authors: Daniel Povey
@@ -6,14 +6,14 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_CONNECT_H_
-#define K2_cc_CONNECT_H_
+#ifndef sequeender_cc_CONNECT_H_
+#define sequeender_cc_CONNECT_H_
 
 #include <vector>
 
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 /*
   Removes states that are not accessible (from the start state) or are not
   co-accessible (i.e. that cannot reach the final state), and ensures that
@@ -106,6 +106,6 @@ class Connection {
  */
 bool ConnectCore(const Fsa &fsa, std::vector<int32_t> *state_map);
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_CONNECT_H_
+#endif  // sequeender_cc_CONNECT_H_

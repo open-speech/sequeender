@@ -1,11 +1,11 @@
-// k2/cc/determinize.cc
+// sequeender/cc/determinize.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 // dpove@gmail.com, Haowen Qiu qindazhu@gmail.com)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/determinize.h"
+#include "sequeender/cc/determinize.h"
 
 #include <algorithm>
 #include <cassert>
@@ -16,12 +16,12 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 
 template <typename TracebackState>
 void Determinizer<TracebackState>::GetSizes(
@@ -218,4 +218,4 @@ void TraceBack(std::unordered_set<MaxTracebackState *> *cur_states,
   *weight_out = static_cast<float>(cur_forward_prob - prev_forward_prob);
 }
 
-}  // namespace k2
+}  // namespace sequeender

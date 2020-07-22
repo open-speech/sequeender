@@ -1,22 +1,22 @@
-// k2/cc/fsa_test.cc
+// sequeender/cc/fsa_test.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
 #include <memory>
 #include <string>
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/array.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/array.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 
 TEST(CfsaVec, CreateCfsa) {
   std::vector<Arc> arcs1 = {
@@ -97,4 +97,4 @@ TEST(CfsaVec, CreateCfsa) {
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender

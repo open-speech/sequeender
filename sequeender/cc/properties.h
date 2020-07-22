@@ -1,18 +1,18 @@
-// k2/cc/properties.h
+// sequeender/cc/properties.h
 
 // Copyright (c)  2020  Daniel Povey
 //                      Haowen Qiu
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_PROPERTIES_H_
-#define K2_cc_PROPERTIES_H_
+#ifndef sequeender_cc_PROPERTIES_H_
+#define sequeender_cc_PROPERTIES_H_
 
 #include <vector>
 
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 
 // TODO(Dan): we might not need this.
 enum Properties {
@@ -128,6 +128,6 @@ inline bool IsEmpty(const Fsa &fsa) { return fsa.size1 == 0; }
 bool CheckProperties(const Fsa &fsa, const Properties &properties,
                      bool die_on_error = false);
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_PROPERTIES_H_
+#endif  // sequeender_cc_PROPERTIES_H_

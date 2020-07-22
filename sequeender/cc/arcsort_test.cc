@@ -1,10 +1,10 @@
-// k2/cc/arcsort_test.cc
+// sequeender/cc/arcsort_test.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/arcsort.h"
+#include "sequeender/cc/arcsort.h"
 
 #include <algorithm>
 #include <memory>
@@ -13,11 +13,11 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 TEST(ArcSortTest, ArcSorter) {
   // empty fsa
   {
@@ -122,4 +122,4 @@ TEST(ArcSortTest, ArcSort) {
     EXPECT_THAT(arc_map, ::testing::ElementsAre(2, 1, 0, 4, 3, 5));
   }
 }
-}  // namespace k2
+}  // namespace sequeender

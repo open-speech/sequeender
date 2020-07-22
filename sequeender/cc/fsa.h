@@ -1,12 +1,12 @@
-// k2/cc/fsa.h
+// sequeender/cc/fsa.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_FSA_H_
-#define K2_cc_FSA_H_
+#ifndef sequeender_cc_FSA_H_
+#define sequeender_cc_FSA_H_
 
 #include <cstdint>
 #include <tuple>
@@ -14,10 +14,10 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/array.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/array.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 
 enum {
   kFinalSymbol = -1,  // final-costs are represented as arcs with
@@ -150,6 +150,6 @@ class DeterministicGenericFsa {
 using FsaVec = std::vector<Fsa>;
 using FstVec = std::vector<Fst>;
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_FSA_H_
+#endif  // sequeender_cc_FSA_H_

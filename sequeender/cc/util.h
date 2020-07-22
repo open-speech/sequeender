@@ -1,12 +1,12 @@
-// k2/cc/util.h
+// sequeender/cc/util.h
 
 // Copyright (c)  2020  Haowen Qiu
 //                      Fangjun Kuang (csukuangfj@gmail.com)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_UTIL_H_
-#define K2_cc_UTIL_H_
+#ifndef sequeender_cc_UTIL_H_
+#define sequeender_cc_UTIL_H_
 
 #include <algorithm>
 #include <cfloat>
@@ -15,7 +15,7 @@
 #include <limits>
 #include <utility>
 
-namespace k2 {
+namespace sequeender {
 
 #define EXPECT_DOUBLE_ARRAY_APPROX_EQ(expected, actual, abs_error)          \
   ASSERT_EQ((expected).size(), (actual).size()) << "Different Array Size."; \
@@ -103,5 +103,5 @@ inline bool DoubleApproxEqual(double a, double b, double delta = 1e-6) {
 void *MemAlignedMalloc(size_t nbytes, size_t alignment);
 void MemFree(void *ptr);
 
-}  // namespace k2
-#endif  // K2_cc_UTIL_H_
+}  // namespace sequeender
+#endif  // sequeender_cc_UTIL_H_

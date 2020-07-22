@@ -1,19 +1,19 @@
-// k2/cc/fsa_util_test.cc
+// sequeender/cc/fsa_util_test.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/fsa_util.h"
+#include "sequeender/cc/fsa_util.h"
 
 #include <utility>
 #include <vector>
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 class ArcMapTest : public ::testing::Test {
  protected:
   ArcMapTest() {
@@ -283,4 +283,4 @@ TEST(FsaAlgo, CreateFsa) {
                 ::testing::ElementsAre(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11));
   }
 }
-}  // namespace k2
+}  // namespace sequeender

@@ -1,10 +1,10 @@
-// k2/cc/intersect_test.cc
+// sequeender/cc/intersect_test.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/intersect.h"
+#include "sequeender/cc/intersect.h"
 
 #include <algorithm>
 #include <memory>
@@ -13,11 +13,11 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 
 TEST(IntersectTest, Intersect) {
   // empty fsa
@@ -116,4 +116,4 @@ TEST(IntersectTest, Intersect) {
                 ::testing::ElementsAre(0, -1, 1, 2, 1, 1, 2, -1, -1, 3));
   }
 }
-}  // namespace k2
+}  // namespace sequeender

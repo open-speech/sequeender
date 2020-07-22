@@ -1,14 +1,14 @@
-// k2/py/cc/tensor.cc
+// sequeender/py/cc/tensor.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 
 // See ../../../LICENSE for clarification regarding multiple authors
 
-#include "k2/py/cc/tensor.h"
+#include "sequeender/py/cc/tensor.h"
 
 #include "glog/logging.h"
 
-namespace k2 {
+namespace sequeender {
 
 // refer to
 // https://github.com/pytorch/pytorch/blob/master/torch/cc/Module.cpp#L375
@@ -24,7 +24,7 @@ static const char *kDLPackTensorName = "dltensor";
 // PyTorch, TVM and CuPy name the used dltensor to be `used_dltensor`
 static const char *kDLPackUsedTensorName = "used_dltensor";
 
-static DataType DLDataTypeToK2DataType(DLDataTypeCode data_type) {
+static DataType DLDataTypeTosequeenderDataType(DLDataTypeCode data_type) {
   switch (data_type) {
     case kDLInt:
       return kInt32Type;
@@ -36,7 +36,7 @@ static DataType DLDataTypeToK2DataType(DLDataTypeCode data_type) {
   }
 }
 
-static DeviceType DLDeviceTypeToK2DeviceType(DLDeviceType device_type) {
+static DeviceType DLDeviceTypeTosequeenderDeviceType(DLDeviceType device_type) {
   switch (device_type) {
     case kDLCPU:
       return kCPU;
@@ -71,11 +71,11 @@ Tensor::Tensor(py::capsule capsule) {
 
   dl_managed_tensor_ = capsule;  // either throw or succeed with a non-null ptr
 
-  dtype_ = DLDataTypeToK2DataType(
+  dtype_ = DLDataTypeTosequeenderDataType(
       (DLDataTypeCode)dl_managed_tensor_->dl_tensor.dtype.code);
 
   device_type_ =
-      DLDeviceTypeToK2DeviceType(dl_managed_tensor_->dl_tensor.ctx.device_type);
+      DLDeviceTypeTosequeenderDeviceType(dl_managed_tensor_->dl_tensor.ctx.device_type);
 
   Check();
 }
@@ -128,4 +128,4 @@ void Tensor::Check() const {
   CHECK_EQ(device_type_, kCPU) << "We support only kCPU at present";
 }
 
-}  // namespace k2
+}  // namespace sequeender

@@ -1,19 +1,19 @@
-// k2/cc/arcsort.h
+// sequeender/cc/arcsort.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_ARCSORT_H_
-#define K2_cc_ARCSORT_H_
+#ifndef sequeender_cc_ARCSORT_H_
+#define sequeender_cc_ARCSORT_H_
 
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 /**
     Sort arcs leaving each state in the input FSA on label first and
     then on `dest_state`
@@ -57,6 +57,6 @@ class ArcSorter {
 // size num-arcs of `fsa`, e.g. `fsa->size2`
 void ArcSort(Fsa *fsa, int32_t *arc_map = nullptr);
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_ARCSORT_H_
+#endif  // sequeender_cc_ARCSORT_H_

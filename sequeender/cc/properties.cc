@@ -1,4 +1,4 @@
-// k2/cc/properties.cc
+// sequeender/cc/properties.cc
 
 // Copyright (c)  2020 Haowen Qiu
 //                     Daniel Povey
@@ -6,18 +6,18 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/properties.h"
+#include "sequeender/cc/properties.h"
 
 #include <algorithm>
 #include <stack>
 #include <unordered_set>
 #include <vector>
 
-#include "k2/cc/connect.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
+#include "sequeender/cc/connect.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
 
-namespace k2 {
+namespace sequeender {
 
 bool IsValid(const Fsa &fsa) {
   if (IsEmpty(fsa)) return true;
@@ -155,4 +155,4 @@ bool IsConnected(const Fsa &fsa) {
   ConnectCore(fsa, &state_map);
   return static_cast<int32_t>(state_map.size()) == fsa.NumStates();
 }
-}  // namespace k2
+}  // namespace sequeender

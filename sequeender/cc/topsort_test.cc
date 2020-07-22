@@ -1,11 +1,11 @@
-// k2/cc/topsort_test.cc
+// sequeender/cc/topsort_test.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/topsort.h"
+#include "sequeender/cc/topsort.h"
 
 #include <algorithm>
 #include <memory>
@@ -14,12 +14,12 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/array.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/array.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 TEST(TopSortTest, TopSort) {
   {
     // case 1: empty input fsa
@@ -128,4 +128,4 @@ TEST(TopSortTest, TopSort) {
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender

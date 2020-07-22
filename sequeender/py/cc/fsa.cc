@@ -1,18 +1,18 @@
-// k2/py/cc/fsa.cc
+// sequeender/py/cc/fsa.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../../LICENSE for clarification regarding multiple authors
 
-#include "k2/py/cc/fsa.h"
+#include "sequeender/py/cc/fsa.h"
 
 #include <memory>
 
-#include "k2/cc/fsa.h"
-#include "k2/py/cc/tensor.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/py/cc/tensor.h"
 
-namespace k2 {
+namespace sequeender {
 
 // it uses external memory passed from DLPack (e.g., by PyTorch)
 // to construct an Fsa.
@@ -46,10 +46,10 @@ class DLPackFsa : public Fsa {
   std::unique_ptr<Tensor> data_tensor_;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
 void PybindArc(py::module &m) {
-  using PyClass = k2::Arc;
+  using PyClass = sequeender::Arc;
   py::class_<PyClass>(m, "Arc")
       .def(py::init<>())
       .def(py::init<int32_t, int32_t, int32_t>(), py::arg("src_state"),
@@ -66,11 +66,11 @@ void PybindArc(py::module &m) {
 
 void PybindFsa(py::module &m) {
   // The following wrapper is only used by pybind11 internally
-  // so that it knows `k2::DLPackFsa` is a subclass of `k2::Fsa`.
-  py::class_<k2::Fsa>(m, "_Fsa");
+  // so that it knows `sequeender::DLPackFsa` is a subclass of `sequeender::Fsa`.
+  py::class_<sequeender::Fsa>(m, "_Fsa");
 
-  using PyClass = k2::DLPackFsa;
-  py::class_<PyClass, k2::Fsa>(m, "DLPackFsa")
+  using PyClass = sequeender::DLPackFsa;
+  py::class_<PyClass, sequeender::Fsa>(m, "DLPackFsa")
       .def(py::init<py::capsule, py::capsule>(), py::arg("indexes"),
            py::arg("data"))
       .def("empty", &PyClass::Empty)

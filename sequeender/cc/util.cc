@@ -1,16 +1,16 @@
-// k2/cc/util.cc
+// sequeender/cc/util.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/util.h"
+#include "sequeender/cc/util.h"
 
 #include <stdlib.h>
 
 #include "glog/logging.h"
 
-namespace k2 {
+namespace sequeender {
 
 void *MemAlignedMalloc(std::size_t nbytes, std::size_t alignment) {
   void *p = nullptr;
@@ -35,4 +35,4 @@ void MemFree(void *ptr) {
 #endif
 }
 
-}  // namespace k2
+}  // namespace sequeender

@@ -1,20 +1,20 @@
-// k2/cc/topsort.h
+// sequeender/cc/topsort.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_TOPSORT_H_
-#define K2_cc_TOPSORT_H_
+#ifndef sequeender_cc_TOPSORT_H_
+#define sequeender_cc_TOPSORT_H_
 
 #include <utility>
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 
 /**
     Sort the input fsa topologically.
@@ -65,6 +65,6 @@ class TopSorter {
   std::vector<int32_t> order_;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_TOPSORT_H_
+#endif  // sequeender_cc_TOPSORT_H_

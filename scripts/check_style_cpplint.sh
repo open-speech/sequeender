@@ -21,7 +21,7 @@
 
 
 cur_dir=$(cd $(dirname $BASH_SOURCE) && pwd)
-k2_dir=$(cd $cur_dir/.. && pwd)
+sequeender_dir=$(cd $cur_dir/.. && pwd)
 
 if [ $# -ge 1 ]; then
   build_dir=$(cd $1 && pwd)

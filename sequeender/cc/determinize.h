@@ -1,12 +1,12 @@
-// k2/cc/determinize.h
+// sequeender/cc/determinize.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_DETERMINIZE_H_
-#define K2_cc_DETERMINIZE_H_
+#ifndef sequeender_cc_DETERMINIZE_H_
+#define sequeender_cc_DETERMINIZE_H_
 
 #include <algorithm>
 #include <cassert>
@@ -20,12 +20,12 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/determinize_impl.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/util.h"
-#include "k2/cc/weights.h"
+#include "sequeender/cc/determinize_impl.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/util.h"
+#include "sequeender/cc/weights.h"
 
-namespace k2 {
+namespace sequeender {
 
 /*
    Pruned determinization with log-sum (equivalent to log semiring) or max
@@ -143,6 +143,6 @@ class Determinizer {
 using DeterminizerMax = Determinizer<MaxTracebackState>;
 using DeterminizerLogSum = Determinizer<LogSumTracebackState>;
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_DETERMINIZE_H_
+#endif  // sequeender_cc_DETERMINIZE_H_

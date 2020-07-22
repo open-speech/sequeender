@@ -1,16 +1,16 @@
-// k2/py/cc/tensor.h
+// sequeender/py/cc/tensor.h
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 
 // See ../../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_py_cc_TENSOR_H_
-#define K2_py_cc_TENSOR_H_
+#ifndef sequeender_py_cc_TENSOR_H_
+#define sequeender_py_cc_TENSOR_H_
 
-#include "k2/py/cc/dlpack.h"
-#include "k2/py/cc/k2.h"
+#include "sequeender/py/cc/dlpack.h"
+#include "sequeender/py/cc/sequeender.h"
 
-namespace k2 {
+namespace sequeender {
 
 enum class DataType : int8_t {
   kInt32Type = 0,
@@ -94,6 +94,6 @@ class Tensor {
   DeviceType device_type_ = kUnknownDevice;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_py_cc_TENSOR_H_
+#endif  // sequeender_py_cc_TENSOR_H_

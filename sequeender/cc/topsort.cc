@@ -1,22 +1,22 @@
-// k2/cc/topsort.cc
+// sequeender/cc/topsort.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/topsort.h"
+#include "sequeender/cc/topsort.h"
 
 #include <algorithm>
 #include <unordered_map>
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/properties.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/properties.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 void TopSorter::GetSizes(Array2Size<int32_t> *fsa_size) {
   CHECK_NOTNULL(fsa_size);
   fsa_size->size1 = fsa_size->size2 = 0;
@@ -78,4 +78,4 @@ bool TopSorter::GetOutput(Fsa *fsa_out, int32_t *state_map /* = nullptr*/) {
   return true;
 }
 
-}  // namespace k2
+}  // namespace sequeender

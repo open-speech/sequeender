@@ -1,18 +1,18 @@
-// k2/py/cc/array.cc
+// sequeender/py/cc/array.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../../LICENSE for clarification regarding multiple authors
 
-#include "k2/py/cc/array.h"
+#include "sequeender/py/cc/array.h"
 
 #include <memory>
 #include <utility>
 
-#include "k2/cc/array.h"
-#include "k2/py/cc/tensor.h"
+#include "sequeender/cc/array.h"
+#include "sequeender/py/cc/tensor.h"
 
-namespace k2 {
+namespace sequeender {
 /*
    DLPackArray2 initializes Array2 with `cap_indexes` and `cap_data` which are
    DLManagedTensors.
@@ -103,12 +103,12 @@ class DLPackArray2<ValueType *, false, I> : public Array2<ValueType *, I> {
 
 // Note: we can specialized for `StridedPtr` later if we need it.
 
-}  // namespace k2
+}  // namespace sequeender
 
 template <typename Ptr, bool IsPrimitive, typename I = int32_t>
 void PybindArray2Tpl(py::module &m, const char *name) {
-  using PyClass = k2::DLPackArray2<Ptr, IsPrimitive, I>;
-  using Parent = k2::Array2<Ptr, I>;
+  using PyClass = sequeender::DLPackArray2<Ptr, IsPrimitive, I>;
+  using Parent = sequeender::Array2<Ptr, I>;
   py::class_<PyClass, Parent>(m, name)
       .def(py::init<py::capsule, py::capsule>(), py::arg("indexes"),
            py::arg("data"))
@@ -129,13 +129,13 @@ void PybindArray2Tpl(py::module &m, const char *name) {
 
 void PybindArray(py::module &m) {
   // Note: all the following wrappers whose name starts with `_` are only used
-  // by pybind11 internally so that it knows `k2::DLPackArray2` is a subclass of
-  // `k2::Array2`.
-  py::class_<k2::Array2<int32_t *>>(m, "_IntArray2");
+  // by pybind11 internally so that it knows `sequeender::DLPackArray2` is a subclass of
+  // `sequeender::Array2`.
+  py::class_<sequeender::Array2<int32_t *>>(m, "_IntArray2");
   PybindArray2Tpl<int32_t *, true>(m, "DLPackIntArray2");
 
   // note there is a type cast as the underlying Tensor is with type `float`
-  py::class_<k2::Array2<std::pair<int32_t, float> *>>(m, "_LogSumArcDerivs");
+  py::class_<sequeender::Array2<std::pair<int32_t, float> *>>(m, "_LogSumArcDerivs");
   PybindArray2Tpl<std::pair<int32_t, float> *, false>(m,
                                                       "DLPackLogSumArcDerivs");
 }

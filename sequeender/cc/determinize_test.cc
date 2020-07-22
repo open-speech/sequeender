@@ -1,10 +1,10 @@
-// k2/cc/determinize_test.cc
+// sequeender/cc/determinize_test.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/determinize.h"
+#include "sequeender/cc/determinize.h"
 
 #include <algorithm>
 #include <memory>
@@ -13,13 +13,13 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_equivalent.h"
-#include "k2/cc/fsa_renderer.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_equivalent.h"
+#include "sequeender/cc/fsa_renderer.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 class DeterminizeTest : public ::testing::Test {
  protected:
   DeterminizeTest() {
@@ -112,4 +112,4 @@ TEST_F(DeterminizeTest, DeterminizePrunedLogSum) {
   // check the sum of `derivs_out` for each output arc?
 }
 
-}  // namespace k2
+}  // namespace sequeender

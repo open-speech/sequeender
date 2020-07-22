@@ -1,20 +1,20 @@
-// k2/cc/aux_labels.h
+// sequeender/cc/aux_labels.h
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Daniel Povey)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_AUX_LABELS_H_
-#define K2_cc_AUX_LABELS_H_
+#ifndef sequeender_cc_AUX_LABELS_H_
+#define sequeender_cc_AUX_LABELS_H_
 
 #include <vector>
 
-#include "k2/cc/array.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/array.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 
 /*
   This header contains utilities for dealing with auxiliary labels on FSAs.
@@ -191,6 +191,6 @@ class FstInverter {
   const AuxLabels &labels_in_;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_AUX_LABELS_H_
+#endif  // sequeender_cc_AUX_LABELS_H_

@@ -1,11 +1,11 @@
-// k2/cc/dense_fsa.h
+// sequeender/cc/dense_fsa.h
 
 // Copyright (c)  2020  Daniel Povey
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_DENSE_FSA_H_
-#define K2_cc_DENSE_FSA_H_
+#ifndef sequeender_cc_DENSE_FSA_H_
+#define sequeender_cc_DENSE_FSA_H_
 
 #include <cstdint>
 #include <tuple>
@@ -13,10 +13,10 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 
 /*
   DenseFsa represents an FSA stored as a matrix, representing something
@@ -295,6 +295,6 @@ void IntersectPruned(const DenseFsa &a, const Fsa &b, float beam, Fsa *c,
 /* Convert DenseFsa to regular Fsa (for testing purposes) */
 void DenseToFsa(const DenseFsa &a, Fsa *b);
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_DENSE_FSA_H_
+#endif  // sequeender_cc_DENSE_FSA_H_

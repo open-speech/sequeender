@@ -1,4 +1,4 @@
 preprocessorErrorDirective:*
 *:build_dir/_deps/*
-unusedFunction:k2_dir/k2/csrc/*_test.cc
-useStlAlgorithm:k2_dir/k2/csrc/properties.cc
+unusedFunction:sequeender_dir/sequeender/csrc/*_test.cc
+useStlAlgorithm:sequeender_dir/sequeender/csrc/properties.cc

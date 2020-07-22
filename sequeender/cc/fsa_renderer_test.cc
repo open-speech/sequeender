@@ -1,19 +1,19 @@
-// k2/cc/fsa_renderer_test.cc
+// sequeender/cc/fsa_renderer_test.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/fsa_renderer.h"
+#include "sequeender/cc/fsa_renderer.h"
 
 #include <utility>
 #include <vector>
 
 #include "gtest/gtest.h"
-#include "k2/cc/fsa_util.h"
+#include "sequeender/cc/fsa_util.h"
 
-namespace k2 {
+namespace sequeender {
 
 // NOTE(fangjun): this test always passes.
 // Its purpose is to get a Graphviz representation
@@ -21,7 +21,7 @@ namespace k2 {
 //
 // For example, you can run
 //
-//  ./k2/cc/fsa_renderer_test 2>&1 >/dev/null | dot -Tpdf > test.pdf
+//  ./sequeender/cc/fsa_renderer_test 2>&1 >/dev/null | dot -Tpdf > test.pdf
 //
 // and then open the generated "test.pdf" to verify FsaRenderer works
 // as expected.
@@ -38,4 +38,4 @@ TEST(FsaRenderer, Render) {
   std::cerr << renderer.Render();
 }
 
-}  // namespace k2
+}  // namespace sequeender

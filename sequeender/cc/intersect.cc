@@ -1,10 +1,10 @@
-// k2/cc/intersect.cc
+// sequeender/cc/intersect.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/intersect.h"
+#include "sequeender/cc/intersect.h"
 
 #include <algorithm>
 #include <queue>
@@ -13,9 +13,9 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/properties.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/properties.h"
+#include "sequeender/cc/util.h"
 
 namespace {
 
@@ -24,7 +24,7 @@ using StatePair = std::pair<int32_t, int32_t>;
 static inline int32_t InsertIntersectionState(
     const StatePair &new_state, int32_t *state_index_c,
     std::queue<StatePair> *qstates,
-    std::unordered_map<StatePair, int32_t, k2::PairHash> *state_pair_map) {
+    std::unordered_map<StatePair, int32_t, sequeender::PairHash> *state_pair_map) {
   auto result = state_pair_map->insert({new_state, *state_index_c + 1});
   if (result.second) {
     // we have not visited `new_state` before.
@@ -35,7 +35,7 @@ static inline int32_t InsertIntersectionState(
 }
 }  // namespace
 
-namespace k2 {
+namespace sequeender {
 
 void Intersection::GetSizes(Array2Size<int32_t> *fsa_size) {
   CHECK_NOTNULL(fsa_size);
@@ -179,4 +179,4 @@ bool Intersection::GetOutput(Fsa *c, int32_t *arc_map_a /*= nullptr*/,
   return true;
 }
 
-}  // namespace k2
+}  // namespace sequeender

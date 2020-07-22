@@ -1,28 +1,28 @@
-// k2/cc/weights.cc
+// sequeender/cc/weights.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/weights.h"
+#include "sequeender/cc/weights.h"
 
 #include <algorithm>
 #include <queue>
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/properties.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/properties.h"
+#include "sequeender/cc/util.h"
 
 namespace {
-void CheckInput(const k2::Fsa &fsa, const float *arc_weights) {
+void CheckInput(const sequeender::Fsa &fsa, const float *arc_weights) {
   CHECK(IsValid(fsa));
   CHECK_NOTNULL(arc_weights);
 }
 }  // namespace
 
-namespace k2 {
+namespace sequeender {
 
 void ComputeForwardMaxWeights(const Fsa &fsa, const float *arc_weights,
                               double *state_weights) {
@@ -181,4 +181,4 @@ void WfsaWithFbWeights::ComputeBackardWeights() {
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender

@@ -1,11 +1,11 @@
-// k2/cc/connect_test.cc
+// sequeender/cc/connect_test.cc
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 //                      Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/connect.h"
+#include "sequeender/cc/connect.h"
 
 #include <algorithm>
 #include <utility>
@@ -13,11 +13,11 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 TEST(ConnectTest, ConnectCore) {
   {
     // case 1: an empty input fsa
@@ -239,4 +239,4 @@ TEST(ConnectTest, Connect) {
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender

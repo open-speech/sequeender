@@ -1,10 +1,10 @@
-// k2/cc/aux_labels.cc
+// sequeender/cc/aux_labels.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/aux_labels.h"
+#include "sequeender/cc/aux_labels.h"
 
 #include <algorithm>
 #include <numeric>
@@ -12,9 +12,9 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
 namespace {
 
@@ -30,8 +30,8 @@ namespace {
                                 extra `num_extra_states[i]` states in the output
                                 inverted FSA.
 */
-static void CountExtraStates(const k2::Fsa &fsa_in,
-                             const k2::AuxLabels &labels_in,
+static void CountExtraStates(const sequeender::Fsa &fsa_in,
+                             const sequeender::AuxLabels &labels_in,
                              std::vector<int32_t> *num_extra_states) {
   CHECK_EQ(num_extra_states->size(), fsa_in.NumStates());
   auto &states = *num_extra_states;
@@ -86,7 +86,7 @@ static void MapStates(const std::vector<int32_t> &num_extra_states,
 }
 }  // namespace
 
-namespace k2 {
+namespace sequeender {
 
 void AuxLabels1Mapper::GetSizes(Array2Size<int32_t> *aux_size) {
   CHECK_NOTNULL(aux_size);
@@ -253,4 +253,4 @@ void FstInverter::GetOutput(Fsa *fsa_out, AuxLabels *labels_out) {
   // don't need to call `GetSizes` here as `labels_out` has been initialized
   aux_mapper.GetOutput(labels_out);
 }
-}  // namespace k2
+}  // namespace sequeender

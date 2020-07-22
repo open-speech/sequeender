@@ -1,10 +1,10 @@
-// k2/cc/fsa_equivalent.cc
+// sequeender/cc/fsa_equivalent.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/fsa_equivalent.h"
+#include "sequeender/cc/fsa_equivalent.h"
 
 #include <algorithm>
 #include <queue>
@@ -14,14 +14,14 @@
 #include <utility>
 #include <vector>
 
-#include "k2/cc/arcsort.h"
-#include "k2/cc/connect.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/intersect.h"
-#include "k2/cc/properties.h"
-#include "k2/cc/util.h"
-#include "k2/cc/weights.h"
+#include "sequeender/cc/arcsort.h"
+#include "sequeender/cc/connect.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/intersect.h"
+#include "sequeender/cc/properties.h"
+#include "sequeender/cc/util.h"
+#include "sequeender/cc/weights.h"
 
 namespace {
 /*
@@ -31,11 +31,11 @@ namespace {
   function call, the memory of the output FSA is managed by `fsa_out` and
   will be released automatically if `fsa_out`is out of scope.
  */
-static bool Connect(const k2::Fsa &fsa_in, k2::FsaCreator *fsa_out,
+static bool Connect(const sequeender::Fsa &fsa_in, sequeender::FsaCreator *fsa_out,
                     std::vector<int32_t> *arc_map = nullptr) {
   CHECK_NOTNULL(fsa_out);
-  k2::Connection connection(fsa_in);
-  k2::Array2Size<int32_t> fsa_size;
+  sequeender::Connection connection(fsa_in);
+  sequeender::Array2Size<int32_t> fsa_size;
   connection.GetSizes(&fsa_size);
 
   fsa_out->Init(fsa_size);
@@ -53,11 +53,11 @@ static bool Connect(const k2::Fsa &fsa_in, k2::FsaCreator *fsa_out,
   function call, the memory of the output FSA is managed by `fsa_out` and
   will be released automatically if `fsa_out`is out of scope.
  */
-static void ArcSort(const k2::Fsa &fsa_in, k2::FsaCreator *fsa_out,
+static void ArcSort(const sequeender::Fsa &fsa_in, sequeender::FsaCreator *fsa_out,
                     std::vector<int32_t> *arc_map = nullptr) {
   CHECK_NOTNULL(fsa_out);
-  k2::ArcSorter sorter(fsa_in);
-  k2::Array2Size<int32_t> fsa_size;
+  sequeender::ArcSorter sorter(fsa_in);
+  sequeender::Array2Size<int32_t> fsa_size;
   sorter.GetSizes(&fsa_size);
 
   fsa_out->Init(fsa_size);
@@ -73,12 +73,12 @@ static void ArcSort(const k2::Fsa &fsa_in, k2::FsaCreator *fsa_out,
   function call, the memory of the output FSA is managed by `c` and will
   be released automatically if `c`is out of scope.
  */
-static bool Intersect(const k2::Fsa &a, const k2::Fsa &b, k2::FsaCreator *c,
+static bool Intersect(const sequeender::Fsa &a, const sequeender::Fsa &b, sequeender::FsaCreator *c,
                       std::vector<int32_t> *arc_map_a = nullptr,
                       std::vector<int32_t> *arc_map_b = nullptr) {
   CHECK_NOTNULL(c);
-  k2::Intersection intersection(a, b);
-  k2::Array2Size<int32_t> fsa_size;
+  sequeender::Intersection intersection(a, b);
+  sequeender::Array2Size<int32_t> fsa_size;
   intersection.GetSizes(&fsa_size);
 
   c->Init(fsa_size);
@@ -98,12 +98,12 @@ static bool Intersect(const k2::Fsa &a, const k2::Fsa &b, k2::FsaCreator *c,
   the function call, the memory of the output path is managed by `path`
   and will be released automatically if `path`is out of scope.
  */
-static bool RandomPath(const k2::Fsa &fsa_in, bool no_eps_arc,
-                       k2::FsaCreator *path,
+static bool RandomPath(const sequeender::Fsa &fsa_in, bool no_eps_arc,
+                       sequeender::FsaCreator *path,
                        std::vector<int32_t> *arc_map = nullptr) {
   CHECK_NOTNULL(path);
-  k2::RandPath rand_path(fsa_in, no_eps_arc);
-  k2::Array2Size<int32_t> fsa_size;
+  sequeender::RandPath rand_path(fsa_in, no_eps_arc);
+  sequeender::Array2Size<int32_t> fsa_size;
   rand_path.GetSizes(&fsa_size);
 
   path->Init(fsa_size);
@@ -142,7 +142,7 @@ static void SetDifference(const std::unordered_set<int32_t> &a,
 
 }  // namespace
 
-namespace k2 {
+namespace sequeender {
 
 bool IsRandEquivalent(const Fsa &a, const Fsa &b, std::size_t npath /*=100*/) {
   // We will do `intersect` later which requires either `a` or `b` is
@@ -495,4 +495,4 @@ bool RandPath::GetOutput(Fsa *fsa_out, int32_t *arc_map /*= nullptr*/) {
   return true;
 }
 
-}  // namespace k2
+}  // namespace sequeender

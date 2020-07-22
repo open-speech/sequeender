@@ -1,10 +1,10 @@
-// k2/cc/arcsort.cc
+// sequeender/cc/arcsort.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/arcsort.h"
+#include "sequeender/cc/arcsort.h"
 
 #include <algorithm>
 #include <numeric>
@@ -12,9 +12,9 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 void ArcSorter::GetSizes(Array2Size<int32_t> *fsa_size) const {
   CHECK_NOTNULL(fsa_size);
   fsa_size->size1 = fsa_in_.size1;
@@ -77,4 +77,4 @@ void ArcSort(Fsa *fsa, int32_t *arc_map /*= nullptr*/) {
   if (arc_map != nullptr) std::copy(indexes.begin(), indexes.end(), arc_map);
 }
 
-}  // namespace k2
+}  // namespace sequeender

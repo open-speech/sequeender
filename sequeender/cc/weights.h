@@ -1,23 +1,23 @@
-// k2/cc/weights.h
+// sequeender/cc/weights.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_WEIGHTS_H_
-#define K2_cc_WEIGHTS_H_
+#ifndef sequeender_cc_WEIGHTS_H_
+#define sequeender_cc_WEIGHTS_H_
 
 #include <functional>
 #include <limits>
 #include <memory>
 #include <vector>
 
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/properties.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/properties.h"
 
-namespace k2 {
+namespace sequeender {
 
 constexpr float kFloatInfinity = std::numeric_limits<float>::infinity();
 constexpr float kFloatNegativeInfinity =
@@ -207,6 +207,6 @@ struct WfsaWithFbWeights {
   void ComputeBackardWeights();
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_WEIGHTS_H_
+#endif  // sequeender_cc_WEIGHTS_H_

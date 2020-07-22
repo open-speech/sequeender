@@ -1,4 +1,4 @@
-// k2/cc/fsa_renderer.h
+// sequeender/cc/fsa_renderer.h
 
 // Copyright (c)  2020  Fangjun Kuang (csukuangfj@gmail.com)
 
@@ -6,12 +6,12 @@
 
 #include <string>
 
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-#ifndef K2_cc_FSA_RENDERER_H_
-#define K2_cc_FSA_RENDERER_H_
+#ifndef sequeender_cc_FSA_RENDERER_H_
+#define sequeender_cc_FSA_RENDERER_H_
 
-namespace k2 {
+namespace sequeender {
 
 // Get a GraphViz representation of an fsa.
 class FsaRenderer {
@@ -27,6 +27,6 @@ class FsaRenderer {
   const float *arc_weights_;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_FSA_RENDERER_H_
+#endif  // sequeender_cc_FSA_RENDERER_H_

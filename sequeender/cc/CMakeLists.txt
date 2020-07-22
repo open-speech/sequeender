@@ -26,7 +26,7 @@ else()
 endif()
 target_link_libraries(fsa PUBLIC glog)
 
-function(k2_add_fsa_test name)
+function(sequeender_add_fsa_test name)
   add_executable(${name} "${name}.cc")
   target_link_libraries(${name}
     PRIVATE
@@ -59,5 +59,5 @@ set(fsa_tests
 )
 
 foreach(name IN LISTS fsa_tests)
-  k2_add_fsa_test(${name})
+  sequeender_add_fsa_test(${name})
 endforeach()

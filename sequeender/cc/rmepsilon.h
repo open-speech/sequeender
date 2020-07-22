@@ -1,23 +1,23 @@
-// k2/cc/rmepsilon.h
+// sequeender/cc/rmepsilon.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_RMEPSILON_H_
-#define K2_cc_RMEPSILON_H_
+#ifndef sequeender_cc_RMEPSILON_H_
+#define sequeender_cc_RMEPSILON_H_
 
 #include <type_traits>
 #include <utility>
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/determinize_impl.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/weights.h"
+#include "sequeender/cc/determinize_impl.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/weights.h"
 
-namespace k2 {
+namespace sequeender {
 
 /*
    Output an Fsa that is equivalent to the input but which has no
@@ -131,6 +131,6 @@ void RmEpsilonsLogSum(const Fsa &a, float *a_weights, Fsa *b,
                       std::vector<float> *b_arc_weights,
                       std::vector<std::vector<int32_t>> *arc_map);
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_RMEPSILON_H_
+#endif  // sequeender_cc_RMEPSILON_H_

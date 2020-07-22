@@ -1,10 +1,10 @@
-// k2/cc/array_test.cc
+// sequeender/cc/array_test.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/array.h"
+#include "sequeender/cc/array.h"
 
 #include <iterator>
 #include <memory>
@@ -16,7 +16,7 @@
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
 
-namespace k2 {
+namespace sequeender {
 
 template <typename Ptr, typename IndexType>
 void TestArray2(int32_t stride) {
@@ -226,4 +226,4 @@ TEST(ArrayTest, StridedPtr) {
   TestArray3<StridedPtr<int32_t, int32_t>, int32_t>(2);
 }
 
-}  // namespace k2
+}  // namespace sequeender

@@ -1,14 +1,14 @@
-// k2/py/cc/array.h
+// sequeender/py/cc/array.h
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_py_cc_ARRAY_H_
-#define K2_py_cc_ARRAY_H_
+#ifndef sequeender_py_cc_ARRAY_H_
+#define sequeender_py_cc_ARRAY_H_
 
-#include "k2/py/cc/k2.h"
+#include "sequeender/py/cc/sequeender.h"
 
 void PybindArray(py::module &m);
 
-#endif  // K2_py_cc_ARRAY_H_
+#endif  // sequeender_py_cc_ARRAY_H_

@@ -88,7 +88,7 @@ jobs:
       shell: bash
       working-directory: ${{github.workspace}}
       run: |
-        clang-tidy-9 --quiet -p ${{runner.workspace}}/build k2/csrc/*.cc k2/python/csrc/*.cc
+        clang-tidy-9 --quiet -p ${{runner.workspace}}/build sequeender/csrc/*.cc sequeender/python/csrc/*.cc
 
     - name: Run python tests
       run: |

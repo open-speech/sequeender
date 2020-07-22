@@ -1,4 +1,4 @@
-// k2/cc/properties_test.cc
+// sequeender/cc/properties_test.cc
 
 // Copyright (c)  2020  Haowen Qiu
 //                      Fangjun Kuang (csukuangfj@gmail.com)
@@ -6,16 +6,16 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/properties.h"
+#include "sequeender/cc/properties.h"
 
 #include <utility>
 #include <vector>
 
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_util.h"
 
-namespace k2 {
+namespace sequeender {
 
 TEST(Properties, IsNotValid) {
   // fsa should contain at least two states.
@@ -438,4 +438,4 @@ TEST(FsaAlgo, IsAcyclic) {
   }
 }
 
-}  // namespace k2
+}  // namespace sequeender

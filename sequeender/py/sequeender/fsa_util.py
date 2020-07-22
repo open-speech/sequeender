@@ -25,7 +25,7 @@ def str_to_fsa(s: str) -> Fsa:
     Args:
         s (str): a string representation of the fsa
     Returns:
-        k2.Fsa
+        sequeender.Fsa
     """
     rule_pattern = re.compile(r"^[ \t]*(\d+)[ \t]+(\d+)[ \t]+([-]?\d+)[ \t]*$$")
     final_state_pattern = re.compile(r"^[ \t]*(\d+)[ \t]*$")

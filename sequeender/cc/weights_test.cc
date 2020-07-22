@@ -1,10 +1,10 @@
-// k2/cc/weights_test.cc
+// sequeender/cc/weights_test.cc
 
 // Copyright (c)  2020  Xiaomi Corporation (author: Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#include "k2/cc/weights.h"
+#include "sequeender/cc/weights.h"
 
 #include <algorithm>
 #include <utility>
@@ -12,12 +12,12 @@
 
 #include "gmock/gmock.h"
 #include "gtest/gtest.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/fsa_renderer.h"
-#include "k2/cc/fsa_util.h"
-#include "k2/cc/util.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/fsa_renderer.h"
+#include "sequeender/cc/fsa_util.h"
+#include "sequeender/cc/util.h"
 
-namespace k2 {
+namespace sequeender {
 
 class WeightsTest : public ::testing::Test {
  protected:
@@ -151,4 +151,4 @@ TEST_F(WeightsTest, WfsaWithFbWeightsLogSum) {
   EXPECT_DOUBLE_ARRAY_APPROX_EQ(weights, backward_logsum_weights_, 1e-3);
 }
 
-}  // namespace k2
+}  // namespace sequeender

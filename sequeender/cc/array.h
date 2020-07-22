@@ -1,12 +1,12 @@
-// k2/cc/array.h
+// sequeender/cc/array.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_ARRAY_H_
-#define K2_cc_ARRAY_H_
+#ifndef sequeender_cc_ARRAY_H_
+#define sequeender_cc_ARRAY_H_
 
 #include <algorithm>
 #include <functional>
@@ -19,7 +19,7 @@
 
 #include "glog/logging.h"
 
-namespace k2 {
+namespace sequeender {
 
 /*
    We will use e.g. StridedPtr<T, I> when the stride is not 1, and
@@ -319,24 +319,24 @@ struct Array2Storage {
   std::unique_ptr<ValueType[]> data_storage_;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
 namespace std {
 template <typename T, typename I>
-struct iterator_traits<k2::StridedPtr<T, I>> {
+struct iterator_traits<sequeender::StridedPtr<T, I>> {
   typedef T value_type;
 };
 
 template <typename T, typename I>
-void swap(k2::StridedPtr<T, I> &lhs, k2::StridedPtr<T, I> &rhs) {
+void swap(sequeender::StridedPtr<T, I> &lhs, sequeender::StridedPtr<T, I> &rhs) {
   lhs.Swap(rhs);
 }
 
 template <typename Ptr, typename I>
-void swap(k2::Array2<Ptr, I> &lhs, k2::Array2<Ptr, I> &rhs) {
+void swap(sequeender::Array2<Ptr, I> &lhs, sequeender::Array2<Ptr, I> &rhs) {
   lhs.Swap(rhs);
 }
 
 }  // namespace std
 
-#endif  // K2_cc_ARRAY_H_
+#endif  // sequeender_cc_ARRAY_H_

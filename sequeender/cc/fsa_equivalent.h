@@ -1,4 +1,4 @@
-// k2/cc/fsa_equivalent.h
+// sequeender/cc/fsa_equivalent.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
@@ -9,13 +9,13 @@
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
-#include "k2/cc/weights.h"
+#include "sequeender/cc/fsa.h"
+#include "sequeender/cc/weights.h"
 
-#ifndef K2_cc_FSA_EQUIVALENT_H_
-#define K2_cc_FSA_EQUIVALENT_H_
+#ifndef sequeender_cc_FSA_EQUIVALENT_H_
+#define sequeender_cc_FSA_EQUIVALENT_H_
 
-namespace k2 {
+namespace sequeender {
 
 /*
   Returns true if the Fsa `a` is stochastically equivalent to `b` by randomly
@@ -167,6 +167,6 @@ class RandPath {
   std::vector<int32_t> arc_map_;
 };
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_FSA_EQUIVALENT_H_
+#endif  // sequeender_cc_FSA_EQUIVALENT_H_

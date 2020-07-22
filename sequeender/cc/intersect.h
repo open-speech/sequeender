@@ -1,19 +1,19 @@
-// k2/cc/intersect.h
+// sequeender/cc/intersect.h
 
 // Copyright (c)  2020  Xiaomi Corporation (authors: Daniel Povey
 //                                                   Haowen Qiu)
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef K2_cc_INTERSECT_H_
-#define K2_cc_INTERSECT_H_
+#ifndef sequeender_cc_INTERSECT_H_
+#define sequeender_cc_INTERSECT_H_
 
 #include <vector>
 
 #include "glog/logging.h"
-#include "k2/cc/fsa.h"
+#include "sequeender/cc/fsa.h"
 
-namespace k2 {
+namespace sequeender {
 /**
    Compute the intersection of two FSAs; this is the equivalent of composition
    for automata rather than transducers, and can be used as the core of
@@ -108,6 +108,6 @@ void IntersectPruned2(const Fsa &a, const float *a_cost, const Fsa &b,
                       std::vector<int32_t> *state_map_a,
                       std::vector<int32_t> *state_map_b);
 
-}  // namespace k2
+}  // namespace sequeender
 
-#endif  // K2_cc_INTERSECT_H_
+#endif  // sequeender_cc_INTERSECT_H_

@@ -37,6 +37,11 @@ importlib_metadata = {version = "^1.6.0", python = "<3.8"}
 typer = {extras = ["all"], version = "^0.2.1"}
 rich = "^2.2.2"
 pre-commit = "^2.5.1"
+cppyy-cling = "^6.21.0"
+cppyy-backend = "^1.12.1"
+CpyCppyy = "^1.11.1"
+cppyy = "^1.8.0"
+clang = "^6.0.0"
 
 [tool.poetry.dev-dependencies]
 darglint = "^1.4.1"

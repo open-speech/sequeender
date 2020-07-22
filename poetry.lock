@@ -107,6 +107,14 @@ version = "3.0.4"
 
 [[package]]
 category = "main"
+description = ""
+name = "clang"
+optional = false
+python-versions = "*"
+version = "6.0.0.2"
+
+[[package]]
+category = "main"
 description = "Composable command line interface toolkit"
 name = "click"
 optional = false
@@ -131,6 +139,50 @@ version = "0.9.1"
 
 [package.extras]
 test = ["flake8 (3.7.8)", "hypothesis (3.55.3)"]
+
+[[package]]
+category = "main"
+description = "Cling-based Python-C++ bindings"
+name = "cppyy"
+optional = false
+python-versions = "*"
+version = "1.8.0"
+
+[package.dependencies]
+CPyCppyy = "1.11.1"
+cppyy-backend = "1.12.1"
+cppyy-cling = "6.21.0"
+
+[[package]]
+category = "main"
+description = "C/C++ wrapper for Cling"
+name = "cppyy-backend"
+optional = false
+python-versions = "*"
+version = "1.12.1"
+
+[package.dependencies]
+cppyy-cling = ["<6.22", ">=6.21"]
+
+[[package]]
+category = "main"
+description = "Re-packaged Cling, as backend for cppyy"
+name = "cppyy-cling"
+optional = false
+python-versions = "*"
+version = "6.21.0"
+
+[[package]]
+category = "main"
+description = "Cling-based Python-C++ bindings for CPython"
+name = "cpycppyy"
+optional = false
+python-versions = "*"
+version = "1.11.1"
+
+[package.dependencies]
+cppyy-backend = ">=1.12.0,<1.13.0"
+cppyy-cling = ">=6.21.0,<6.22.0"
 
 [[package]]
 category = "dev"
@@ -696,7 +748,8 @@ docs = ["sphinx", "jaraco.packaging (>=3.2)", "rst.linker (>=1.9)"]
 testing = ["jaraco.itertools", "func-timeout"]
 
 [metadata]
-content-hash = "26664c05a1a21be967f11aebf4074e912a5e6d4e7316a418c0375c890e59c14a"
+content-hash = "5e190e0b6f49c484c5e90bab988329e27bd12696d324341f3112c997246b040e"
+lock-version = "1.0"
 python-versions = "^3.7"
 
 [metadata.files]
@@ -736,6 +789,10 @@ chardet = [
     {file = "chardet-3.0.4-py2.py3-none-any.whl", hash = "sha256:fc323ffcaeaed0e0a02bf4d117757b98aed530d9ed4531e3e15460124c106691"},
     {file = "chardet-3.0.4.tar.gz", hash = "sha256:84ab92ed1c4d4f16916e05906b6b75a6c0fb5db821cc65e70cbd64a3e2a5eaae"},
 ]
+clang = [
+    {file = "clang-6.0.0.2-py2.py3-none-any.whl", hash = "sha256:73e3a7978edda18306a7e02881cfca3b616d02c5999f8570002f2cae8c84d6c3"},
+    {file = "clang-6.0.0.2.tar.gz", hash = "sha256:fea8d56f3f5f02f61c4c1160dbce0f4ff244b996993d35433124d4b505de8b79"},
+]
 click = [
     {file = "click-7.1.2-py2.py3-none-any.whl", hash = "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"},
     {file = "click-7.1.2.tar.gz", hash = "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"},
@@ -747,6 +804,22 @@ colorama = [
 commonmark = [
     {file = "commonmark-0.9.1-py2.py3-none-any.whl", hash = "sha256:da2f38c92590f83de410ba1a3cbceafbc74fee9def35f9251ba9a971d6d66fd9"},
     {file = "commonmark-0.9.1.tar.gz", hash = "sha256:452f9dc859be7f06631ddcb328b6919c67984aca654e5fefb3914d54691aed60"},
+]
+cppyy = [
+    {file = "cppyy-1.8.0.tar.gz", hash = "sha256:da9be6b01e803308473d8311bf8e74695ecb5387efbe9160278d5c823ead2214"},
+]
+cppyy-backend = [
+    {file = "cppyy-backend-1.12.1.tar.gz", hash = "sha256:b97195009c29a5ab25750333bdb4018d4948424982bbdc58e8218a24743673f9"},
+]
+cppyy-cling = [
+    {file = "cppyy-cling-6.21.0.tar.gz", hash = "sha256:441ef75da0f777828fe8e007f1bd32f8e7deee92d7a9311c3469b4869b34010e"},
+    {file = "cppyy_cling-6.21.0-py2.py3-none-macosx_10_12_x86_64.whl", hash = "sha256:839ea21d9432faf9e94a304025eaeb5e09ab19fb90e586c9a8d4168e288a2bb4"},
+    {file = "cppyy_cling-6.21.0-py2.py3-none-manylinux1_x86_64.whl", hash = "sha256:18a701229f98b2b9084a0feca80c8ad0a2999c54b3c6916f3e615d47d1bd2299"},
+    {file = "cppyy_cling-6.21.0-py2.py3-none-win32.whl", hash = "sha256:6e9ef6b8ae99de0b995b8e8bd653ca6bb400daa40989d2cdc6efa065440fb786"},
+    {file = "cppyy_cling-6.21.0-py2.py3-none-win_amd64.whl", hash = "sha256:f5c8f1c43714d9eda9230f57dc0548ed46d591b3c9521e0e5504e0fd44778ac2"},
+]
+cpycppyy = [
+    {file = "CPyCppyy-1.11.1.tar.gz", hash = "sha256:63588a8024c75e78d3129b288a06e2bd73e6af79e37d13924ff50c285c4f8a07"},
 ]
 darglint = [
     {file = "darglint-1.5.1-py3-none-any.whl", hash = "sha256:b37be3bea80d25fa015c002ab63d4100a676441dbb75af7cd1df69b1b9324d5f"},

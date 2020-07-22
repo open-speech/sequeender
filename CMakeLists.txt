@@ -11,7 +11,7 @@ endif()
 
 cmake_minimum_required(VERSION 3.5 FATAL_ERROR)
 
-project(k2)
+project(sequeender)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
@@ -41,4 +41,4 @@ include(glog)
 include(googletest)
 include(pybind11)
 
-add_subdirectory(k2)
+add_subdirectory(sequeender)

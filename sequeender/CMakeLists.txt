@@ -1,2 +1,2 @@
-add_subdirectory(csrc)
-add_subdirectory(python)
+add_subdirectory(cc)
+add_subdirectory(py)

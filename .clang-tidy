@@ -21,7 +21,7 @@
 #     cd build
 #     cmake ..
 #     cd ..
-#     clang-tidy-9 -p build k2/csrc/*.cc
+#     clang-tidy-9 -p build k2/cc/*.cc
 #
 # ------------------------------------------------------------
 # Explanations for disabled checks
@@ -77,7 +77,7 @@ Checks: >
   -readability-uppercase-literal-suffix,
   performance-*,
 
-HeaderFilterRegex: "k2/csrc/.*"
+HeaderFilterRegex: "k2/cc/.*"
 
 # TODO(fangjun): when to enable this?
 #

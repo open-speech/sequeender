@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_UTIL_H_
-#define sequeender_cc_UTIL_H_
+#ifndef SEQUEENDER_CC_UTIL_H_
+#define SEQUEENDER_CC_UTIL_H_
 
 #include <algorithm>
 #include <cfloat>
@@ -104,4 +104,4 @@ void *MemAlignedMalloc(size_t nbytes, size_t alignment);
 void MemFree(void *ptr);
 
 }  // namespace sequeender
-#endif  // sequeender_cc_UTIL_H_
+#endif  // SEQUEENDER_CC_UTIL_H_

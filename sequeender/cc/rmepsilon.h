@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_RMEPSILON_H_
-#define sequeender_cc_RMEPSILON_H_
+#ifndef SEQUEENDER_CC_RMEPSILON_H_
+#define SEQUEENDER_CC_RMEPSILON_H_
 
 #include <type_traits>
 #include <utility>
@@ -133,4 +133,4 @@ void RmEpsilonsLogSum(const Fsa &a, float *a_weights, Fsa *b,
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_RMEPSILON_H_
+#endif  // SEQUEENDER_CC_RMEPSILON_H_

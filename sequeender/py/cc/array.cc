@@ -128,9 +128,10 @@ void PybindArray2Tpl(py::module &m, const char *name) {
 }
 
 void PybindArray(py::module &m) {
-  // Note: all the following wrappers whose name starts with `_` are only used
-  // by pybind11 internally so that it knows `sequeender::DLPackArray2` is a subclass of
-  // `sequeender::Array2`.
+  // Note: all the following wrappers whose name
+  // starts with `_` are only used by pybind11
+  // internally so that it knows `sequeender::DLPackArray2`
+  // is a subclass of `sequeender::Array2`.
   py::class_<sequeender::Array2<int32_t *>>(m, "_IntArray2");
   PybindArray2Tpl<int32_t *, true>(m, "DLPackIntArray2");
 

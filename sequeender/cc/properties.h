@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_PROPERTIES_H_
-#define sequeender_cc_PROPERTIES_H_
+#ifndef SEQUEENDER_CC_PROPERTIES_H_
+#define SEQUEENDER_CC_PROPERTIES_H_
 
 #include <vector>
 
@@ -130,4 +130,4 @@ bool CheckProperties(const Fsa &fsa, const Properties &properties,
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_PROPERTIES_H_
+#endif  // SEQUEENDER_CC_PROPERTIES_H_

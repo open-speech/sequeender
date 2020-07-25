@@ -8,4 +8,4 @@ pybind11_add_module(_sequeender
 )
 
 target_include_directories(_sequeender PRIVATE ${CMAKE_SOURCE_DIR})
-target_link_libraries(_sequeender PRIVATE fsa)
+target_link_libraries(_sequeender PRIVATE ${CMAKE_PROJECT_NAME})

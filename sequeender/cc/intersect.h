@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_INTERSECT_H_
-#define sequeender_cc_INTERSECT_H_
+#ifndef SEQUEENDER_CC_INTERSECT_H_
+#define SEQUEENDER_CC_INTERSECT_H_
 
 #include <vector>
 
@@ -110,4 +110,4 @@ void IntersectPruned2(const Fsa &a, const float *a_cost, const Fsa &b,
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_INTERSECT_H_
+#endif  // SEQUEENDER_CC_INTERSECT_H_

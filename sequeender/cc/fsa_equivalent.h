@@ -12,8 +12,8 @@
 #include "sequeender/cc/fsa.h"
 #include "sequeender/cc/weights.h"
 
-#ifndef sequeender_cc_FSA_EQUIVALENT_H_
-#define sequeender_cc_FSA_EQUIVALENT_H_
+#ifndef SEQUEENDER_CC_FSA_EQUIVALENT_H_
+#define SEQUEENDER_CC_FSA_EQUIVALENT_H_
 
 namespace sequeender {
 
@@ -169,4 +169,4 @@ class RandPath {
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_FSA_EQUIVALENT_H_
+#endif  // SEQUEENDER_CC_FSA_EQUIVALENT_H_

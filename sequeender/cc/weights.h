@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_WEIGHTS_H_
-#define sequeender_cc_WEIGHTS_H_
+#ifndef SEQUEENDER_CC_WEIGHTS_H_
+#define SEQUEENDER_CC_WEIGHTS_H_
 
 #include <functional>
 #include <limits>
@@ -209,4 +209,4 @@ struct WfsaWithFbWeights {
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_WEIGHTS_H_
+#endif  // SEQUEENDER_CC_WEIGHTS_H_

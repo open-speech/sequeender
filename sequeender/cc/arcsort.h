@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_ARCSORT_H_
-#define sequeender_cc_ARCSORT_H_
+#ifndef SEQUEENDER_CC_ARCSORT_H_
+#define SEQUEENDER_CC_ARCSORT_H_
 
 #include <vector>
 
@@ -59,4 +59,4 @@ void ArcSort(Fsa *fsa, int32_t *arc_map = nullptr);
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_ARCSORT_H_
+#endif  // SEQUEENDER_CC_ARCSORT_H_

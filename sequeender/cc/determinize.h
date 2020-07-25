@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_DETERMINIZE_H_
-#define sequeender_cc_DETERMINIZE_H_
+#ifndef SEQUEENDER_CC_DETERMINIZE_H_
+#define SEQUEENDER_CC_DETERMINIZE_H_
 
 #include <algorithm>
 #include <cassert>
@@ -145,4 +145,4 @@ using DeterminizerLogSum = Determinizer<LogSumTracebackState>;
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_DETERMINIZE_H_
+#endif  // SEQUEENDER_CC_DETERMINIZE_H_

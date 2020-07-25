@@ -4,8 +4,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_AUX_LABELS_H_
-#define sequeender_cc_AUX_LABELS_H_
+#ifndef SEQUEENDER_CC_AUX_LABELS_H_
+#define SEQUEENDER_CC_AUX_LABELS_H_
 
 #include <vector>
 
@@ -193,4 +193,4 @@ class FstInverter {
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_AUX_LABELS_H_
+#endif  // SEQUEENDER_CC_AUX_LABELS_H_

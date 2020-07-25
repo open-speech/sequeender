@@ -4,8 +4,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_DENSE_FSA_H_
-#define sequeender_cc_DENSE_FSA_H_
+#ifndef SEQUEENDER_CC_DENSE_FSA_H_
+#define SEQUEENDER_CC_DENSE_FSA_H_
 
 #include <cstdint>
 #include <tuple>
@@ -297,4 +297,4 @@ void DenseToFsa(const DenseFsa &a, Fsa *b);
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_DENSE_FSA_H_
+#endif  // SEQUEENDER_CC_DENSE_FSA_H_

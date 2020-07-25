@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_FSA_H_
-#define sequeender_cc_FSA_H_
+#ifndef SEQUEENDER_CC_FSA_H_
+#define SEQUEENDER_CC_FSA_H_
 
 #include <cstdint>
 #include <tuple>
@@ -18,6 +18,20 @@
 #include "sequeender/cc/util.h"
 
 namespace sequeender {
+
+class Point {
+ public:
+  Point() = default;
+  Point(double x, double y) : x(x), y(y) {}
+  double x, y;
+};
+
+class NearestNeighbors {
+ public:
+  NearestNeighbors() = default;
+  std::vector<Point> points;
+  std::vector<Point> Nearest(Point, int k);
+};
 
 enum {
   kFinalSymbol = -1,  // final-costs are represented as arcs with
@@ -152,4 +166,4 @@ using FstVec = std::vector<Fst>;
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_FSA_H_
+#endif  // SEQUEENDER_CC_FSA_H_

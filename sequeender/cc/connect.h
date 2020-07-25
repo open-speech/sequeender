@@ -6,8 +6,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_CONNECT_H_
-#define sequeender_cc_CONNECT_H_
+#ifndef SEQUEENDER_CC_CONNECT_H_
+#define SEQUEENDER_CC_CONNECT_H_
 
 #include <vector>
 
@@ -108,4 +108,4 @@ bool ConnectCore(const Fsa &fsa, std::vector<int32_t> *state_map);
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_CONNECT_H_
+#endif  // SEQUEENDER_CC_CONNECT_H_

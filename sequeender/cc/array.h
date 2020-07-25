@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_ARRAY_H_
-#define sequeender_cc_ARRAY_H_
+#ifndef SEQUEENDER_CC_ARRAY_H_
+#define SEQUEENDER_CC_ARRAY_H_
 
 #include <algorithm>
 #include <functional>
@@ -339,4 +339,4 @@ void swap(sequeender::Array2<Ptr, I> &lhs, sequeender::Array2<Ptr, I> &rhs) {
 
 }  // namespace std
 
-#endif  // sequeender_cc_ARRAY_H_
+#endif  // SEQUEENDER_CC_ARRAY_H_

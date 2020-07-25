@@ -1,0 +1,9 @@
+<lcgdict>
+    <selection>
+        <class name="sequeender::Point"/>
+        <class name="sequeender::NearestNeighbors"/>
+        <class name="std::vector<sequeender::Point>"/>
+    </selection>
+    <exclusion>
+    </exclusion>
+</lcgdict>

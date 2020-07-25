@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_DETERMINIZE_IMPL_H_
-#define sequeender_cc_DETERMINIZE_IMPL_H_
+#ifndef SEQUEENDER_CC_DETERMINIZE_IMPL_H_
+#define SEQUEENDER_CC_DETERMINIZE_IMPL_H_
 
 #include <algorithm>
 #include <cassert>
@@ -794,4 +794,4 @@ class DetStateMap {
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_DETERMINIZE_IMPL_H_
+#endif  // SEQUEENDER_CC_DETERMINIZE_IMPL_H_

@@ -8,8 +8,8 @@
 
 #include "sequeender/cc/fsa.h"
 
-#ifndef sequeender_cc_FSA_RENDERER_H_
-#define sequeender_cc_FSA_RENDERER_H_
+#ifndef SEQUEENDER_CC_FSA_RENDERER_H_
+#define SEQUEENDER_CC_FSA_RENDERER_H_
 
 namespace sequeender {
 
@@ -29,4 +29,4 @@ class FsaRenderer {
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_FSA_RENDERER_H_
+#endif  // SEQUEENDER_CC_FSA_RENDERER_H_

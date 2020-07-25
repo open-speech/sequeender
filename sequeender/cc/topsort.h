@@ -5,8 +5,8 @@
 
 // See ../../LICENSE for clarification regarding multiple authors
 
-#ifndef sequeender_cc_TOPSORT_H_
-#define sequeender_cc_TOPSORT_H_
+#ifndef SEQUEENDER_CC_TOPSORT_H_
+#define SEQUEENDER_CC_TOPSORT_H_
 
 #include <utility>
 #include <vector>
@@ -67,4 +67,4 @@ class TopSorter {
 
 }  // namespace sequeender
 
-#endif  // sequeender_cc_TOPSORT_H_
+#endif  // SEQUEENDER_CC_TOPSORT_H_

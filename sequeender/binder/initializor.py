@@ -1,5 +1,3 @@
-#!/usr/bin/env python3
-
 """
 Support utilities for bindings.
 """
@@ -36,6 +34,7 @@ except ImportError:
 
 
 gettext.install(__name__)
+
 
 ptypes = r"\b(bool|char|short|int|unsigned|long|float|double)\b"
 PRIMITIVE_TYPES = re.compile(ptypes)
@@ -193,9 +192,14 @@ def initialize(pkg, lib_file, map_file, noisy=False):
     # that are in the global namespace will be compiled when injected, before
     # having their pythonizors applied
     #
-    pythonization_files = glob.glob(
-        os.path.join(pkg_dir, "**/pythonize*.py"), recursive=True
-    )
+    try:
+        pythonization_files = glob.glob(
+            os.path.join(pkg_dir, "**/pythonize*.py"), recursive=True
+        )
+    except TypeError:
+        # versions older than 3.5 do not support 'recursive'
+        # TODO: below is good enough for most cases, but not recursive
+        pythonization_files = glob.glob(os.path.join(pkg_dir, "pythonize*.py"))
     add_pythonizations(pythonization_files, noisy=noisy)
 
     #

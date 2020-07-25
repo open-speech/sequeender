@@ -71,6 +71,41 @@ struct StridedPtr {
   }
 };
 
+template <typename Ptr, typename I = int32_t>
+struct Array1 {
+  // One dimensional array of something, like vector<X>
+  // where Ptr is, or behaves like, X*.
+  using IndexT = I;
+  using PtrT = Ptr;
+  using ValueType = typename std::iterator_traits<Ptr>::value_type;
+
+  Array1() : begin(0), end(0), size(0), data(nullptr) {}
+  Array1(IndexT begin, IndexT end, PtrT data)
+      : begin(begin), end(end), data(data) {
+    CHECK_GE(end, begin);
+    this->size = end - begin;
+  }
+  Array1(IndexT size, PtrT data) : begin(0), end(size), size(size), data(data) {
+    CHECK_GE(size, 0);
+  }
+  void Init(IndexT begin, IndexT end, PtrT data) {
+    CHECK_GE(end, begin);
+    this->begin = begin;
+    this->end = end;
+    this->size = end - begin;
+    this->data = data;
+  }
+  bool Empty() const { return begin == end; }
+
+  // 'begin' and 'end' are the first and one-past-the-last indexes into `data`
+  // that we are allowed to use.
+  IndexT begin;
+  IndexT end;
+  IndexT size;  // the number of elements in `data` that can be accessed, equals
+  // to `end - begin`
+  PtrT data;
+};
+
 /*
   This struct stores the size of an Array2 object; it will generally be used as
   an output argument by functions that work out this size.
@@ -106,19 +141,19 @@ struct Array2 {
 
   IndexT size1;
   IndexT size2;     // the number of elements in the array,  equal to
-                    // indexes[size1] - indexes[0] (if the object Array2
-                    // has been initialized).
+  // indexes[size1] - indexes[0] (if the object Array2
+  // has been initialized).
   IndexT *indexes;  // indexes[0,1,...size1] should be defined; note,
-                    // this means the array must be of at least
-                    // size1+1.  We require that indexes[i] <=
-                    // indexes[i+1], but it is not required that
-                    // indexes[0] == 0, it may be greater than 0.
-                    // `indexes` should point to a zero if `size1 == 0`,
-                    // i.e. `indexes[0] == 0`
+  // this means the array must be of at least
+  // size1+1.  We require that indexes[i] <=
+  // indexes[i+1], but it is not required that
+  // indexes[0] == 0, it may be greater than 0.
+  // `indexes` should point to a zero if `size1 == 0`,
+  // i.e. `indexes[0] == 0`
   PtrT data;  // `data` might be an actual pointer, or might be some object
-              // supporting operator [].  data[indexes[0]] through
-              // data[indexes[size1] - 1] must be accessible through this
-              // object.
+  // supporting operator [].  data[indexes[0]] through
+  // data[indexes[size1] - 1] must be accessible through this
+  // object.
 
   /*
      If an Array2 object is initialized and `size1` == 0, it means the object is
@@ -162,28 +197,28 @@ struct Array3 {
   using PtrT = Ptr;
 
   IndexT size1;  // equal to the number of Array2 object in this Array3 object;
-                 // `size1 + 1` will be the number of elements in indexes1.
+  // `size1 + 1` will be the number of elements in indexes1.
 
   IndexT size2;  // equal to indexes1[size1] - indexes1[0];
-                 // `size2 + 1` will be the number of elements in indexes2;
+  // `size2 + 1` will be the number of elements in indexes2;
 
   IndexT size3;  // the number of elements in `data`,  equal to
-                 // indexes2[indexes1[size1]] - indexes2[indexes1[0]].
+  // indexes2[indexes1[size1]] - indexes2[indexes1[0]].
 
   IndexT *indexes1;  // indexes1[0,1,...size1] should be defined; note,
-                     // this means the array must be of at least size1+1.
-                     // We require that indexes[i] <= indexes[i+1], but it
-                     // is not required that indexes[0] == 0, it may be greater
-                     // than 0.
+  // this means the array must be of at least size1+1.
+  // We require that indexes[i] <= indexes[i+1], but it
+  // is not required that indexes[0] == 0, it may be greater
+  // than 0.
 
   IndexT *indexes2;  // indexes2[indexes1[0]]
-                     // .. indexes2[indexes1[size1]] should be defined;
-                     // note, this means the array must be of at least size2+1.
+  // .. indexes2[indexes1[size1]] should be defined;
+  // note, this means the array must be of at least size2+1.
 
   Ptr data;  // `data` might be an actual pointer, or might be some object
-             // supporting operator [].  data[indexes2[indexes1[0]]] through
-             // data[indexes2[indexes1[size1]] - 1] must be accessible
-             // through this object.
+  // supporting operator [].  data[indexes2[indexes1[0]]] through
+  // data[indexes2[indexes1[size1]] - 1] must be accessible
+  // through this object.
 
   Array2<Ptr, I> operator[](I i) const {
     DCHECK_GE(i, 0);
@@ -231,7 +266,7 @@ struct Array3 {
       // copy indexes
       CHECK_LE(size2_tmp + curr_array.size1, size2);
       I begin_index = curr_array.indexes[0];  // indexes[0] is always valid and
-                                              // may be greater than 0
+      // may be greater than 0
       for (I j = 0; j != curr_array.size1; ++j) {
         indexes2[size2_tmp++] = size3_tmp + curr_array.indexes[j] - begin_index;
       }
@@ -293,12 +328,10 @@ struct Array2Storage {
   Array2Storage(const Array2Size<I> &array2_size, I stride)
       : indexes_storage_(new I[array2_size.size1 + 1]),
         data_storage_(new ValueType[array2_size.size2 * stride]) {
-    array_.size1 = array2_size.size1;
-    array_.size2 = array2_size.size2;
-    array_.indexes = indexes_storage_.get();
+    array_.Init(array2_size.size1, array2_size.size2, indexes_storage_.get(),
+                DataPtrCreator<Ptr, I>::Create(data_storage_, stride));
     // just for case of empty Array2 object, may be written by the caller
     array_.indexes[0] = 0;
-    array_.data = DataPtrCreator<Ptr, I>::Create(data_storage_, stride);
   }
 
   void FillIndexes(const std::vector<I> &indexes) {

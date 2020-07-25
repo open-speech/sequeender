@@ -432,8 +432,12 @@ function(cppyy_add_bindings pkg pkg_version author author_email)
        LIST_DIRECTORIES FALSE
        CONFIGURE_DEPENDS
        "${CMAKE_SOURCE_DIR}/py/*.py")
-  string(TOLOWER ${CMAKE_SYSTEM_NAME} SYSTEM_STR)
-  set(pkg_whl "${CMAKE_BINARY_DIR}/dist/${pkg}-${pkg_version}-py3-none-${SYSTEM_STR}_${CMAKE_SYSTEM_PROCESSOR}.whl")
+  execute_process(COMMAND ${LibClang_PYTHON_EXECUTABLE}
+                  -c "from distutils.util import get_platform;\
+                      print(get_platform().replace('-', '_').replace('.', '_'))"
+                  OUTPUT_VARIABLE SYSTEM_STR
+                  OUTPUT_STRIP_TRAILING_WHITESPACE)
+  set(pkg_whl "${CMAKE_CURRENT_BINARY_DIR}/dist/${pkg}-${pkg_version}-py3-none-${SYSTEM_STR}.whl")
   add_custom_command(OUTPUT ${pkg_whl}
                      COMMAND ${LibClang_PYTHON_EXECUTABLE} setup.py bdist_wheel
                      DEPENDS ${SETUP_PY_FILE} ${lib_name} ${setup_cfg}

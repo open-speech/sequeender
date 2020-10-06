@@ -45,7 +45,7 @@ clang = "^6.0.0"
 wheel = "^0.34.2"
 
 [tool.poetry.dev-dependencies]
-darglint = "^1.4.1"
+darglint = "^1.5.5"
 isort = {extras = ["pyproject"], version = "^4.3.21"}
 pyupgrade = "^2.6.1"
 black = "^19.10b0"

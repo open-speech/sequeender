@@ -48,8 +48,8 @@ function(k2_add_fsa_test name)
   target_link_libraries(${name}
       PRIVATE
       fsa
-      gtest
-      gtest_main
+      GTest::gtest
+      GTest::gtest_main
       )
   add_test(NAME "Test.${name}"
       COMMAND

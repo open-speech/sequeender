@@ -11,7 +11,7 @@ if(USE_PYTORCH)
   set(k2_srcs ${k2_srcs} ${torch_srcs})
   set(k2_deps
     ${TORCH_LIBRARIES}
-    ${TORCH_DIR}/lib/libtorch_python.so
+    ${Python3_SITELIB}/torch/lib/libtorch_python.so
   )
 else()
   message(FATAL_ERROR "Please select a framework.")

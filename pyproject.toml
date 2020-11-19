@@ -1,0 +1,67 @@
+[tool.poetry]
+name = "k2-nailuo"
+version = "0.1.3"
+description = "FSA/FST algorithms, intended to (eventually) be interoperable with PyTorch and similar."
+authors = [
+    "Daniel Povey",
+    "Fangjun Kuang",
+    "Haowen Qiu",
+    "Meixu Song",
+]
+readme = "README.md"
+homepage = "https://github.com/k2-fsa/k2"
+repository = "https://github.com/k2-fsa/k2"
+documentation = "https://github.com/k2-fsa/k2"
+keywords = ["FSA", "Speech", "Machine earning"]
+classifiers = [
+    'Development Status :: 2 - Pre-Alpha',
+    'Intended Audience :: Developers',
+    'Intended Audience :: Education',
+    'Intended Audience :: Science/Research',
+    'License :: OSI Approved :: MIT License',
+    'Topic :: Scientific/Engineering',
+    'Topic :: Scientific/Engineering :: Mathematics',
+    'Topic :: Scientific/Engineering :: Artificial Intelligence',
+    'Topic :: Software Development',
+    'Topic :: Software Development :: Libraries',
+    'Topic :: Software Development :: Libraries :: Python Modules',
+    'Programming Language :: C++',
+    'Programming Language :: Python :: 3',
+]
+license = "MIT"
+build = "build.py"
+packages = [
+    { include = "k2"},
+]
+include = [
+    "k2/csrc/**/*.h",
+    "k2/python/csrc/**/*.h",
+    "k2/python/k2/*.py",
+]
+exclude = [
+    "k2/csrc/**/*.cc",
+    "k2/csrc/**/*.cu",
+    "k2/csrc/**/*.in",
+    "k2/python/host",
+    "k2/python/csrc/**/*.cu",
+    "k2/python/tests",
+    "k2/**/*.txt",
+    "k2/**/*.egg-info",
+]
+
+[tool.poetry.dependencies]
+python = "^3.7"
+torch = "^1.6.0"
+graphviz = "^0.14.1"
+
+[tool.poetry.dev-dependencies]
+cmake = "^3.18.4"
+conan = "^1.31.0"
+flake8 = "^3.8.3"
+yapf = "^0.27.0"
+setuptools-cpp = "^0.1.0"
+setuptools-cpp = "0.1.0"
+
+[build-system]
+requires = ["poetry-core>=1.1.0", "setuptools", "wheel", "setuptools-cpp"]
+build-backend = "poetry.masonry.api"

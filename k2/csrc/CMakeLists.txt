@@ -57,11 +57,7 @@ set_target_properties(context PROPERTIES CUDA_SEPARABLE_COMPILATION ON)
 set_target_properties(context PROPERTIES OUTPUT_NAME "k2context")
 
 # lib deps
-target_link_libraries(context PUBLIC cub)
-target_link_libraries(context PUBLIC fsa)
-target_link_libraries(context PUBLIC k2_log)
-target_link_libraries(context PUBLIC k2_nvtx)
-target_link_libraries(context PUBLIC moderngpu)
+target_link_libraries(context PUBLIC fsa k2_log k2_nvtx cub::cub moderngpu::moderngpu)
 if(USE_PYTORCH)
   target_link_libraries(context PUBLIC ${TORCH_LIBRARIES})
 endif()

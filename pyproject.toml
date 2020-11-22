@@ -9,9 +9,9 @@ authors = [
     "Meixu Song",
 ]
 readme = "README.md"
-homepage = "https://github.com/k2-fsa/k2"
-repository = "https://github.com/k2-fsa/k2"
-documentation = "https://github.com/k2-fsa/k2"
+homepage = "https://github.com/open-speech/sequeender"
+repository = "https://github.com/open-speech/sequeender"
+documentation = "https://github.com/open-speech/sequeender"
 keywords = ["FSA", "Speech", "Machine earning"]
 classifiers = [
     'Development Status :: 2 - Pre-Alpha',
@@ -59,7 +59,7 @@ cmake = "^3.18.4"
 conan = "^1.31.0"
 flake8 = "^3.8.3"
 yapf = "^0.27.0"
-setuptools-cpp = "^0.1.0"
+clang-format = "^9.0.0"
 setuptools-cpp = "0.1.0"
 
 [build-system]

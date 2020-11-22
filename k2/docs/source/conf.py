@@ -118,4 +118,4 @@ def linkcode_resolve(domain, info):
         filename = info['module'].replace('.', '/') + '.py'
     idx = filename.find('k2')
     filename = filename[idx:]
-    return f'https://github.com/k2-fsa/k2/blob/master/k2/python/{filename}'
+    return f'https://github.com/open-speech/sequeender/blob/master/k2/python/{filename}'

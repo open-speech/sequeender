@@ -6,4 +6,5 @@ Cpp11BracedListStyle:   true
 Standard:               Cpp11
 DerivePointerAlignment: false
 PointerAlignment:       Right
+ColumnLimit:            80
 ---

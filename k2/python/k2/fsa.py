@@ -13,8 +13,8 @@ from . import fsa_properties
 from .autograd_utils import phantom_set_scores_to
 
 import torch
-import _k2
 
+from k2 import _k2
 from _k2 import RaggedArc
 from _k2 import _as_float
 from _k2 import _as_int

@@ -5,10 +5,10 @@
 import torch
 from torch.utils.dlpack import to_dlpack
 
-from _k2host import IntArray2Size
-from _k2host import _Arc
-from _k2host import DLPackFsa
-from _k2host import IntArray2Size
+from k2._k2host import IntArray2Size
+from k2._k2host import _Arc
+from k2._k2host import DLPackFsa
+from k2._k2host import IntArray2Size
 
 
 class Arc(_Arc):

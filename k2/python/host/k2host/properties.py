@@ -6,15 +6,15 @@ import torch
 from torch.utils.dlpack import to_dlpack
 
 from .fsa import Fsa
-from _k2host import _is_valid
-from _k2host import _is_top_sorted
-from _k2host import _is_arc_sorted
-from _k2host import _has_self_loops
-from _k2host import _is_acyclic
-from _k2host import _is_deterministic
-from _k2host import _is_epsilon_free
-from _k2host import _is_connected
-from _k2host import _is_empty
+from k2._k2host import _is_valid
+from k2._k2host import _is_top_sorted
+from k2._k2host import _is_arc_sorted
+from k2._k2host import _has_self_loops
+from k2._k2host import _is_acyclic
+from k2._k2host import _is_deterministic
+from k2._k2host import _is_epsilon_free
+from k2._k2host import _is_connected
+from k2._k2host import _is_empty
 
 
 def is_valid(fsa: Fsa) -> bool:

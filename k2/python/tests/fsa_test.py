@@ -10,10 +10,10 @@
 #  ctest --verbose -R fsa_test_py -E "host|dense"
 
 import unittest
-
 import torch
-import _k2  # for test only, users should not import it.
 import k2
+
+from k2 import _k2  # for test only, users should not import it.
 
 
 def _remove_leading_spaces(s: str) -> str:

@@ -5,13 +5,13 @@
 import torch
 from torch.utils.dlpack import to_dlpack
 
-from _k2host import IntArray2Size
-from _k2host import DLPackIntArray2
-from _k2host import DLPackIntArray1
-from _k2host import DLPackStridedIntArray1
-from _k2host import DLPackFloatArray1
-from _k2host import DLPackDoubleArray1
-from _k2host import DLPackLogSumArcDerivs
+from k2._k2host import IntArray2Size
+from k2._k2host import DLPackIntArray2
+from k2._k2host import DLPackIntArray1
+from k2._k2host import DLPackStridedIntArray1
+from k2._k2host import DLPackFloatArray1
+from k2._k2host import DLPackDoubleArray1
+from k2._k2host import DLPackLogSumArcDerivs
 
 
 class IntArray1(DLPackIntArray1):

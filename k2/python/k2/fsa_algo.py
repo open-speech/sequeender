@@ -7,8 +7,8 @@ from typing import Union
 from typing import List
 
 import torch
-import _k2
 
+from k2 import _k2
 from .autograd import index_select
 from .fsa import Fsa
 from . import fsa_properties

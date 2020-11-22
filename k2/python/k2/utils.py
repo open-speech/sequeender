@@ -9,10 +9,10 @@ from typing import Optional
 import torch
 
 from .fsa import Fsa
-from _k2 import _create_fsa_vec
-from _k2 import _fsa_to_str
-from _k2 import _fsa_to_tensor
-from _k2 import _is_rand_equivalent
+from k2._k2 import _create_fsa_vec
+from k2._k2 import _fsa_to_str
+from k2._k2 import _fsa_to_tensor
+from k2._k2 import _is_rand_equivalent
 from graphviz import Digraph
 
 

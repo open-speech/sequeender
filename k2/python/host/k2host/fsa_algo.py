@@ -11,16 +11,16 @@ from .array import IntArray2
 from .array import FloatArray1
 from .array import LogSumArcDerivs
 from .weights import WfsaWithFbWeights
-from _k2host import IntArray2Size
-from _k2host import _ArcSorter
-from _k2host import _arc_sort
-from _k2host import _TopSorter
-from _k2host import _Connection
-from _k2host import _Intersection
-from _k2host import _DeterminizerMax
-from _k2host import _DeterminizerLogSum
-from _k2host import _EpsilonsRemoverMax
-from _k2host import _EpsilonsRemoverLogSum
+from k2._k2host import IntArray2Size
+from k2._k2host import _ArcSorter
+from k2._k2host import _arc_sort
+from k2._k2host import _TopSorter
+from k2._k2host import _Connection
+from k2._k2host import _Intersection
+from k2._k2host import _DeterminizerMax
+from k2._k2host import _DeterminizerLogSum
+from k2._k2host import _EpsilonsRemoverMax
+from k2._k2host import _EpsilonsRemoverLogSum
 
 
 class ArcSorter(_ArcSorter):

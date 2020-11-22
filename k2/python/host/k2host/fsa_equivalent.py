@@ -8,12 +8,12 @@ from torch.utils.dlpack import to_dlpack
 from .fsa import Fsa
 from .array import IntArray1
 from .array import FloatArray1
-from _k2host import IntArray2Size
-from _k2host import _RandPath
-from _k2host import _is_rand_equivalent
-from _k2host import _is_rand_equivalent_max_weight
-from _k2host import _is_rand_equivalent_logsum_weight
-from _k2host import _is_rand_equivalent_after_rmeps_pruned_logsum
+from k2._k2host import IntArray2Size
+from k2._k2host import _RandPath
+from k2._k2host import _is_rand_equivalent
+from k2._k2host import _is_rand_equivalent_max_weight
+from k2._k2host import _is_rand_equivalent_logsum_weight
+from k2._k2host import _is_rand_equivalent_after_rmeps_pruned_logsum
 
 
 class RandPath(_RandPath):

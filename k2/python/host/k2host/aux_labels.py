@@ -5,10 +5,10 @@
 import torch
 from torch.utils.dlpack import to_dlpack
 
-from _k2host import IntArray2Size
-from _k2host import _AuxLabels1Mapper
-from _k2host import _AuxLabels2Mapper
-from _k2host import _FstInverter
+from k2._k2host import IntArray2Size
+from k2._k2host import _AuxLabels1Mapper
+from k2._k2host import _AuxLabels2Mapper
+from k2._k2host import _FstInverter
 
 from .fsa import Fsa
 from .array import IntArray1

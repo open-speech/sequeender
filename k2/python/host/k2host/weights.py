@@ -5,9 +5,9 @@
 import torch
 from torch.utils.dlpack import to_dlpack
 
-from _k2host import IntArray2Size
-from _k2host import FbWeightType
-from _k2host import _WfsaWithFbWeights
+from k2._k2host import IntArray2Size
+from k2._k2host import FbWeightType
+from k2._k2host import _WfsaWithFbWeights
 
 from .fsa import Fsa
 from .array import IntArray1

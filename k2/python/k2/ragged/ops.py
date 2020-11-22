@@ -2,9 +2,11 @@
 #
 # See ../../../../LICENSE for clarification regarding multiple authors
 
-from typing import Tuple, Optional
+
 import torch
-import _k2
+
+from k2 import _k2
+from typing import Tuple, Optional
 
 
 def index(src: _k2.RaggedArc,

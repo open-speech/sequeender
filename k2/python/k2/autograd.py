@@ -4,7 +4,8 @@
 from typing import List, Tuple
 
 import torch
-import _k2
+
+from k2 import _k2
 
 
 from .fsa import Fsa

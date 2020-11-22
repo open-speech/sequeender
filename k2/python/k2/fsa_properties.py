@@ -3,8 +3,9 @@
 #
 # See ../../../LICENSE for clarification regarding multiple authors
 
-import torch  # noqa
-import _k2
+
+from .fsa import Fsa
+from k2 import _k2
 
 
 # The FSA properties are a bit-field; these constants can be used

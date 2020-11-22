@@ -116,18 +116,18 @@ else()
   set(CMAKE_CUDA_STANDARD ${CMAKE_CXX_STANDARD})
 endif()
 
-
 enable_testing()
 
-list(APPEND CMAKE_MODULE_PATH ${CMAKE_SOURCE_DIR}/cmake)
-include(pybind11)
+# Find c++ deps
 if(USE_PYTORCH)
   add_definitions(-DK2_USE_PYTORCH)
-  include(torch)
+  set(Torch_DIR "${Python3_SITELIB}/torch/share/cmake/Torch")
+  find_package(Torch REQUIRED)
 endif()
-include(cub)
-include(moderngpu)
-include(googletest)
+find_package(pybind11 REQUIRED)
+find_package(cub REQUIRED)
+find_package(moderngpu REQUIRED)
+find_package(GTest REQUIRED)
 
 
 

@@ -1,0 +1,4 @@
+conan-center https://conan.bintray.com True
+bintray https://api.bintray.com/conan/bincrafters/public-conan True
+os https://api.bintray.com/conan/open-speech/conan-os True
+comm https://api.bintray.com/conan/conan-community/conan True
